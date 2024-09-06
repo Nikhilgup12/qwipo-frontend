@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import {Route, Switch } from 'react-router-dom';
+import CustomerForm from './components/CustomerForm';
+import CustomerList from './components/CustomerList';
+import CustomerDetails from './components/CustomerDetails';
+import UpdateCustomer from './components/UpdateCustomer';
+import LandingPage from "./components/LandingPage"
+import Navbar from './components/Navbar';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar />
+         <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/customers-form" component={CustomerForm} />
+        <Route exact path="/customers-list" component={CustomerList} />
+        <Route exact path="/customers/:id"  component={CustomerDetails} />
+        <Route exact path="/customers/edit/:id" component={UpdateCustomer} /> 
+      </Switch>
+  
+    </>
+  
   );
 }
 

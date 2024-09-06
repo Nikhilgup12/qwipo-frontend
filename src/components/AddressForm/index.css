@@ -1,0 +1,19 @@
+.address-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .address-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .address-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  

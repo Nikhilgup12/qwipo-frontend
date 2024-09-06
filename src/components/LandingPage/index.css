@@ -1,0 +1,33 @@
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .landing-heading {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .landing-description {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    max-width: 600px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
