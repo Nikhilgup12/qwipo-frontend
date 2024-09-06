@@ -23,7 +23,7 @@ class CustomerForm extends Component {
     const { firstName, lastName, email, phone, address } = this.state;
 
     // Make the POST API call to create a new customer
-    fetch('https://qwipo-backend-2.onrender.com/customers', {
+    fetch('https://qwipo-backend-3.onrender.com/customers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ class CustomerForm extends Component {
       .then((response) => response.json())
       .then((data) => {
         console.log('Customer created successfully:', data);
-        // Reset form after successful submission
+     
         this.setState({ firstName: '', lastName: '', email: '', phone: '', address: '' });
       })
       .catch((error) => console.error('Error creating customer:', error));

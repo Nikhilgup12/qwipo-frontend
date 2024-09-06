@@ -19,7 +19,7 @@ class UpdateCustomer extends Component {
 
   fetchCustomerDetails = () => {
     const { id } = this.props.match.params;
-    fetch(`https://qwipo-backend-2.onrender.com/customers/${id}`)
+    fetch(`https://qwipo-backend-3.onrender.com/customers/${id}`)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -42,7 +42,7 @@ class UpdateCustomer extends Component {
     const { firstName, lastName, email, phone,address } = this.state;
     const { id } = this.props.match.params;
 
-    fetch(`https://qwipo-backend-2.onrender.com/customers/${id}`, {
+    fetch(`https://qwipo-backend-3.onrender.com/customers/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ first_name: firstName, last_name: lastName, email:email, phone:phone,address:address })

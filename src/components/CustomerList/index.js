@@ -21,7 +21,7 @@ class CustomerList extends Component {
   fetchCustomers = (page = 0) => {
     const { search } = this.state;
     const pageSize = 10;
-    fetch(`https://qwipo-backend-2.onrender.com/all-customers?name=${search}&page=${page}&limit=${pageSize}`)
+    fetch(`https://qwipo-backend-3.onrender.com/all-customers?name=${search}&page=${page}&limit=${pageSize}`)
       .then((response) => response.json())
       .then((data) => this.setState({ 
         customers: data.customers, 
@@ -42,7 +42,7 @@ class CustomerList extends Component {
 
   handleDeleteCustomer = (id) => {
     if (window.confirm('Are you sure you want to delete this customer?')) {
-      fetch(`https://qwipo-backend-2.onrender.com/customers/${id}`, {
+      fetch(`https://qwipo-backend-3.onrender.com/customers/${id}`, {
         method: 'DELETE',
       })
         .then((response) => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AddressForm from '../AddressForm';
-import './index.css'; // Add a custom CSS file for styling
+import './index.css'; 
 
 class CustomerDetails extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class CustomerDetails extends Component {
 
   fetchCustomerDetails = () => {
     const { id } = this.props.match.params;
-    fetch(`https://qwipo-backend-2.onrender.com/customers/${id}`)
+    fetch(`https://qwipo-backend-3.onrender.com/customers/${id}`)
       .then(response => response.json())
       .then(data => this.setState({ customer: data }))
       .catch(error => console.error('Error fetching customer details:', error));
@@ -27,7 +27,7 @@ class CustomerDetails extends Component {
 
   fetchAddresses = () => {
     const { id } = this.props.match.params;
-    fetch(`https://qwipo-backend-2.onrender.com/customers/${id}/addresses`)
+    fetch(`https://qwipo-backend-3.onrender.com/customers/${id}/addresses`)
       .then(response => response.json())
       .then(data => this.setState({ addresses: data }))
       .catch(error => console.error('Error fetching addresses:', error));
@@ -41,7 +41,7 @@ class CustomerDetails extends Component {
 
   handleAddAddress = (newAddress) => {
     const { id } = this.props.match.params;
-    fetch(`https://qwipo-backend-2.onrender.com/customers/${id}/addresses`, {
+    fetch(`https://qwipo-backend-3.onrender.com/customers/${id}/addresses`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ address: newAddress })
@@ -56,7 +56,7 @@ class CustomerDetails extends Component {
 
   handleDeleteAddress = (addressId) => {
     const { id } = this.props.match.params;
-    fetch(`https://qwipo-backend-2.onrender.com/customers/${id}/addresses/${addressId}`, {
+    fetch(`https://qwipo-backend-3.onrender.com/customers/${id}/addresses/${addressId}`, {
       method: 'DELETE'
     })
       .then(() => {
